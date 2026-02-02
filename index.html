@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravaah'26 Event Logger | IIT Bhubaneswar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🎯 Pravaah'26 Event Logger</h1>
+            <p>Real-time Activity Tracking System | IIT Bhubaneswar</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Statistics Dashboard -->
+        <section class="stats-section">
+            <h2>📊 Activity Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card total">
+                    <div class="stat-number" id="totalCount">0</div>
+                    <div class="stat-label">Total Activities</div>
+                </div>
+                <div class="stat-card info">
+                    <div class="stat-number" id="infoCount">0</div>
+                    <div class="stat-label">Info</div>
+                </div>
+                <div class="stat-card success">
+                    <div class="stat-number" id="successCount">0</div>
+                    <div class="stat-label">Success</div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-number" id="warningCount">0</div>
+                    <div class="stat-label">Warnings</div>
+                </div>
+                <div class="stat-card error">
+                    <div class="stat-number" id="errorCount">0</div>
+                    <div class="stat-label">Errors</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Log New Activity Form -->
+        <section class="form-section">
+            <h2>➕ Log New Activity</h2>
+            <form id="logForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="teamName">Team Name *</label>
+                        <input type="text" id="teamName" placeholder="e.g., CodeCrafters" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="eventType">Event Type *</label>
+                        <select id="eventType" required>
+                            <option value="">Select Event</option>
+                            <option value="Web Hackathon">Web Hackathon</option>
+                            <option value="Data Science Hackathon">Data Science Hackathon</option>
+                            <option value="Robo Soccer">Robo Soccer</option>
+                            <option value="Trekkon">Trekkon</option>
+                            <option value="B-Plan">B-Plan</option>
+                            <option value="Startup Expo">Startup Expo</option>
+                            <option value="Innovation Expo">Innovation Expo</option>
+                            <option value="General">General</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="activity">Activity Description *</label>
+                        <textarea id="activity" rows="3" placeholder="e.g., Submitted project successfully" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="level">Activity Level *</label>
+                        <select id="level" required>
+                            <option value="INFO">INFO - General information</option>
+                            <option value="SUCCESS">SUCCESS - Successful action</option>
+                            <option value="WARNING">WARNING - Warning message</option>
+                            <option value="ERROR">ERROR - Error occurred</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Log Activity</button>
+            </form>
+        </section>
+
+        <!-- Filters -->
+        <section class="filter-section">
+            <h2>🔍 Filter Activities</h2>
+            <div class="filters">
+                <select id="filterLevel">
+                    <option value="">All Levels</option>
+                    <option value="INFO">INFO</option>
+                    <option value="SUCCESS">SUCCESS</option>
+                    <option value="WARNING">WARNING</option>
+                    <option value="ERROR">ERROR</option>
+                </select>
+                
+                <select id="filterEvent">
+                    <option value="">All Events</option>
+                    <option value="Web Hackathon">Web Hackathon</option>
+                    <option value="Data Science Hackathon">Data Science Hackathon</option>
+                    <option value="Robo Soccer">Robo Soccer</option>
+                    <option value="Trekkon">Trekkon</option>
+                    <option value="B-Plan">B-Plan</option>
+                    <option value="General">General</option>
+                </select>
+
+                <button id="refreshBtn" class="btn-secondary">🔄 Refresh</button>
+                <button id="clearAllBtn" class="btn-danger">🗑️ Clear All Logs</button>
+            </div>
+        </section>
+
+        <!-- Activity Logs -->
+        <section class="logs-section">
+            <h2>📋 Activity Logs</h2>
+            <div id="logsContainer" class="logs-container">
+                <div class="loading">Loading activities...</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Pravaah, IIT Bhubaneswar | Web Hackathon Project</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
